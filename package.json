@@ -5,9 +5,9 @@
   "keywords": [],
   "main": "src/index.tsx",
   "dependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "react-scripts": "^5.0.0"
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "react-scripts": "^4.0.3"
   },
   "devDependencies": {
     "@types/react": "19.0.0",
