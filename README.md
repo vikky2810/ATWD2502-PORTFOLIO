@@ -54,9 +54,6 @@ If you want to run this project locally, follow these steps:
 
 4. Open `http://localhost:3000/` in your browser to see the portfolio in action.
 
-## 📜 License
-This project is open-source and available under the [MIT License](LICENSE).
-
 ## 📬 Contact
 If you have any questions or suggestions, feel free to reach out:
 - **Email:** kamblevikram2810@gmail.com
@@ -64,6 +61,3 @@ If you have any questions or suggestions, feel free to reach out:
 
 ---
 ⭐ If you like this project, consider giving it a star on [GitHub](https://github.com/vikky2810/Porfolio-website)! 😊
-
-# Porfolio-website
-Created with CodeSandbox
