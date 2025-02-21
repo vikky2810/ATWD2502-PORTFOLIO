@@ -45,7 +45,7 @@ const About = () =>
       "div",
       { className: "about-content" },
       e("img", {
-        src: "/placeholder.svg?height=200&width=200",
+        src: "/profile.png?height=200&width=200",
         alt: "Profile picture",
         className: "profile-image",
       }),
