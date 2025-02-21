@@ -8,7 +8,7 @@ const Header = ({ isDark, onThemeToggle }) => {
   return e(
     "header",
     { className: "header" },
-    e("div", { className: "logo" }, "Portfolio"),
+    e("div", { className: "logo" }, "Vikram's Portfolio"),
     e(
       "nav",
       { className: "nav" },
