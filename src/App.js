@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import { Github, Linkedin, Mail, Moon, Sun } from 'lucide-react'
-import "./style.css"; /
+import "./style.css"; 
 export default function Page() {
   const [isDark, setIsDark] = React.useState(false)
 
