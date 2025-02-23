@@ -1,202 +1,160 @@
-"use client";
+"use client"
 
-import { createElement as e, useState, useEffect } from "react";
-import "./styles.css";
-const Header = ({ isDark, onThemeToggle }) => {
-  const navItems = ["About", "Projects", "Skills", "Contact"];
+import * as React from "react"
+import { Github, Linkedin, Mail, Moon, Sun } from 'lucide-react'
 
-  return e(
-    "header",
-    { className: "header" },
-    e("div", { className: "logo" }, "Vikram's Portfolio"),
-    e(
-      "nav",
-      { className: "nav" },
-      ...navItems.map((item) =>
-        e(
-          "a",
-          {
-            key: item,
-            href: `#${item.toLowerCase()}`,
-            className: "nav-item",
-          },
-          item
-        )
-      ),
-      e(
-        "button",
-        {
-          className: "theme-toggle",
-          onClick: onThemeToggle,
-          "aria-label": "Toggle theme",
-        },
-        isDark ? "☀️" : "🌙"
-      )
-    )
-  );
-};
+export default function Page() {
+  const [isDark, setIsDark] = React.useState(false)
 
-const About = () =>
-  e(
-    "section",
-    { id: "about", className: "section" },
-    e("h2", { className: "section-title" }, "About Me"),
-    e(
-      "div",
-      { className: "about-content" },
-      e("img", {
-        src: "/profile.png?height=200&width=200",
-        alt: "Profile picture",
-        className: "profile-image",
-      }),
-      e(
-        "p",
-        { className: "about-text" },
-        "I'm a passionate developer focused on creating beautiful and functional web applications. With expertise in modern web technologies, I bring ideas to life through clean code and intuitive design."
-      )
-    )
-  );
+  React.useEffect(() => {
+    document.documentElement.classList.toggle("dark", isDark)
+  }, [isDark])
 
-const Projects = () => {
+  const navItems = ["Home", "About", "Projects", "Contact"]
+
   const projects = [
     {
       title: "Project 1",
       description: "A modern web application built with React",
       image: "/placeholder.svg?height=300&width=400",
+      link: "https://github.com/vikram/project1",
     },
     {
       title: "Project 2",
       description: "Full-stack application with real-time features",
       image: "/placeholder.svg?height=300&width=400",
+      link: "https://github.com/vikram/project2",
     },
     {
       title: "Project 3",
       description: "Mobile-first responsive design project",
       image: "/placeholder.svg?height=300&width=400",
+      link: "https://github.com/vikram/project3",
     },
-  ];
+  ]
 
-  return e(
-    "section",
-    { id: "projects", className: "section" },
-    e("h2", { className: "section-title" }, "Projects"),
-    e(
-      "div",
-      { className: "projects-grid" },
-      ...projects.map((project, index) =>
-        e(
-          "div",
-          { key: index, className: "project-card" },
-          e("img", {
-            src: project.image,
-            alt: project.title,
-            className: "project-image",
-          }),
-          e("h3", { className: "project-title" }, project.title),
-          e("p", { className: "project-description" }, project.description)
-        )
-      )
-    )
-  );
-};
+  return (
+    <div className="app">
+      {/* Header */}
+      <header className="header">
+        <div className="header-content">
+          <h1 className="logo">Vikram&apos;s Portfolio</h1>
+          <nav className="nav">
+            {navItems.map((item) => (
+              <a key={item} href={`#${item.toLowerCase()}`} className="nav-link">
+                {item}
+              </a>
+            ))}
+            <button className="theme-toggle" onClick={() => setIsDark(!isDark)} aria-label="Toggle theme">
+              {isDark ? <Sun className="icon" /> : <Moon className="icon" />}
+            </button>
+          </nav>
+        </div>
+      </header>
 
-const Skills = () => {
-  const skills = [
-    "JavaScript",
-    "React",
-    "Node.js",
-    "CSS",
-    "HTML",
-    "Git",
-    "Responsive Design",
-    "Web Performance",
-  ];
+      {/* Hero */}
+      <section id="home" className="hero">
+        <div className="hero-content">
+          <h2 className="hero-title">Hi, I&apos;m Vikram!</h2>
+          <p className="hero-subtitle">Passionate Developer & Creator</p>
+          <a href="#projects" className="cta-button">
+            View My Work
+          </a>
+        </div>
+      </section>
 
-  return e(
-    "section",
-    { id: "skills", className: "section" },
-    e("h2", { className: "section-title" }, "Skills"),
-    e(
-      "div",
-      { className: "skills-grid" },
-      ...skills.map((skill) =>
-        e("div", { key: skill, className: "skill-item" }, skill)
-      )
-    )
-  );
-};
+      {/* About */}
+      <section id="about" className="about">
+        <div className="container">
+          <h2 className="section-title">About Me</h2>
+          <div className="about-content">
+            <img
+              src="/profile.png?height=200&width=200"
+              alt="Profile"
+              className="profile-image"
+            />
+            <p className="about-text">
+              I&apos;m a passionate developer focused on creating beautiful and functional web applications. 
+              With expertise in modern web technologies, I bring ideas to life through clean code and intuitive design.
+            </p>
+          </div>
+        </div>
+      </section>
 
-const Contact = () =>
-  e(
-    "section",
-    { id: "contact", className: "section" },
-    e("h2", { className: "section-title" }, "Contact"),
-    e(
-      "form",
-      { className: "contact-form" },
-      e(
-        "div",
-        { className: "form-group" },
-        e("input", {
-          type: "text",
-          placeholder: "Name",
-          className: "form-input",
-          required: true,
-        })
-      ),
-      e(
-        "div",
-        { className: "form-group" },
-        e("input", {
-          type: "email",
-          placeholder: "Email",
-          className: "form-input",
-          required: true,
-        })
-      ),
-      e(
-        "div",
-        { className: "form-group" },
-        e("textarea", {
-          placeholder: "Message",
-          className: "form-input",
-          rows: 5,
-          required: true,
-        })
-      ),
-      e("button", { type: "submit", className: "submit-btn" }, "Send Message")
-    )
-  );
+      {/* Projects */}
+      <section id="projects" className="projects">
+        <div className="container">
+          <h2 className="section-title">Projects</h2>
+          <div className="projects-grid">
+            {projects.map((project, index) => (
+              <article key={index} className="project-card">
+                <div className="project-image-container">
+                  <img src={project.image || "/placeholder.svg"} alt={project.title} className="project-image" />
+                </div>
+                <div className="project-content">
+                  <h3 className="project-title">{project.title}</h3>
+                  <p className="project-description">{project.description}</p>
+                  <a href={project.link} className="project-link" target="_blank" rel="noopener noreferrer">
+                    View Project
+                  </a>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
 
-const Footer = () =>
-  e(
-    "footer",
-    { className: "footer" },
-    e("p", null, "© 2024 Portfolio. All rights reserved.")
-  );
+      {/* Contact */}
+      <section id="contact" className="contact">
+        <div className="container">
+          <h2 className="section-title">Contact</h2>
+          <div className="contact-container">
+            <form className="contact-form">
+              <div className="form-group">
+                <input type="text" placeholder="Name" required className="form-input" />
+              </div>
+              <div className="form-group">
+                <input type="email" placeholder="Email" required className="form-input" />
+              </div>
+              <div className="form-group">
+                <textarea placeholder="Message" required className="form-input" rows={5} />
+              </div>
+              <button type="submit" className="submit-button">
+                Send Message
+              </button>
+            </form>
+            <div className="social-links">
+              <a href="https://github.com/vikram" target="_blank" rel="noopener noreferrer" className="social-link">
+                <Github className="icon" />
+                <span className="sr-only">GitHub</span>
+              </a>
+              <a href="https://linkedin.com/in/vikram" target="_blank" rel="noopener noreferrer" className="social-link">
+                <Linkedin className="icon" />
+                <span className="sr-only">LinkedIn</span>
+              </a>
+              <a href="mailto:contact@vikram.dev" className="social-link">
+                <Mail className="icon" />
+                <span className="sr-only">Email</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
 
-export default function Page() {
-  const [isDark, setIsDark] = useState(false);
-
-  useEffect(() => {
-    const root = document.documentElement;
-    root.classList.toggle("dark", isDark);
-  }, [isDark]);
-
-  const toggleTheme = () => setIsDark(!isDark);
-
-  return e(
-    "div",
-    { className: "app" },
-    e(Header, { isDark, onThemeToggle: toggleTheme }),
-    e(
-      "main",
-      { className: "main" },
-      e(About),
-      e(Projects),
-      e(Skills),
-      e(Contact)
-    ),
-    e(Footer)
-  );
+      {/* Footer */}
+      <footer className="footer">
+        <div className="container">
+          <p className="footer-text">© 2024 Portfolio. All rights reserved.</p>
+          <div className="footer-links">
+            <a href="https://github.com/vikram" target="_blank" rel="noopener noreferrer">
+              GitHub
+            </a>
+            <a href="https://linkedin.com/in/vikram" target="_blank" rel="noopener noreferrer">
+              LinkedIn
+            </a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  )
 }
