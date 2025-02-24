@@ -232,7 +232,7 @@ body {
 
 /* Projects Section */
 .projects {
-  padding: var(--space-lg) 0;
+  padding: 5rem 0;
 }
 
 .projects-grid {
