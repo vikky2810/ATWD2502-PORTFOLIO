@@ -16,7 +16,7 @@ export default function Page() {
     {
       title: "My Portfolio Website",
       description: "A personal portfolio showcasing my projects, skills, and experience.",
-      image: "/project1.png?height=300&width=400",
+      image: "/project2.png?height=300&width=400",
       link: "https://github.com/vikky2810/ATWD2502-PORTFOLIO/",
     },
     {
