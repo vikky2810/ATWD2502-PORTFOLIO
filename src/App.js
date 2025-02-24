@@ -16,7 +16,7 @@ export default function Page() {
     {
       title: "Project 1",
       description: "A modern web application built with React",
-      image: "/placeholder.svg?height=300&width=400",
+      image: "/project1.png?height=300&width=400",
       link: "https://github.com/vikram/project1",
     },
     {
