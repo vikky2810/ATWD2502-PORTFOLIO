@@ -14,10 +14,10 @@ export default function Page() {
 
   const projects = [
     {
-      title: "Project 1",
-      description: "A modern web application built with React",
+      title: "My Portfolio Website",
+      description: "A personal portfolio showcasing my projects, skills, and experience.",
       image: "/project1.png?height=300&width=400",
-      link: "https://github.com/vikram/project1",
+      link: "https://github.com/vikky2810/ATWD2502-PORTFOLIO/",
     },
     {
       title: "Project 2",
