@@ -20,10 +20,10 @@ export default function Page() {
       link: "https://github.com/vikky2810/ATWD2502-PORTFOLIO/",
     },
     {
-      title: "Project 2",
-      description: "Full-stack application with real-time features",
-      image: "/placeholder.svg?height=300&width=400",
-      link: "https://github.com/vikram/project2",
+      title: "Conversational Image Recognition Chatbot",
+      description: "A chatbot that can see and talk! Upload an image, ask questions, and get AI-powered responses.",
+      image: "/project1.png?height=300&width=400",
+      link: "https://github.com/vikky2810/Conversational_Image_Recognition_Chatbot",
     },
     {
       title: "Project 3",
