@@ -26,10 +26,10 @@ export default function Page() {
       link: "https://github.com/vikky2810/Conversational_Image_Recognition_Chatbot",
     },
     {
-      title: "Project 3",
-      description: "Mobile-first responsive design project",
-      image: "/placeholder.svg?height=300&width=400",
-      link: "https://github.com/vikram/project3",
+      title: "Freedium URL Opener",
+      description: "A tool that opens premium Medium articles as free readable content. Enjoy seamless reading!",
+      image: "/project3.png?height=300&width=400",
+      link: "https://github.com/vikky2810/Freedium-url-opener",
     },
   ]
 
