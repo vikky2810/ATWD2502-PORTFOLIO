@@ -245,7 +245,7 @@ body {
   background-color: var(--color-background);
   border-radius: var(--radius-lg);
   overflow: hidden;
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-lg);
   transition: transform var(--transition-normal);
 }
 
